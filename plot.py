@@ -147,3 +147,7 @@ def giveavg(N,P,K,startMonth,endMonth):
     obj = UI(N,P,K,startMonth,endMonth)
     l=obj.giveAvgTemps()
     return l
+
+obj=PredictTempMax()
+obj.allPlot()
+obj.trainTest()
