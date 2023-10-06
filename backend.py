@@ -43,7 +43,7 @@ class PredictTempMax:
             monthMaxTemp = self.avg_max_temp.loc[2023, int(i)]
             monthMax.append(monthMaxTemp)
             #average_max_temp_2023 = self.avg_max_temp.loc[2023]
-            print("Average Max Temperature for ",str(i),": ",monthMaxTemp)
+
         return monthMax
 
 class PredictTempMin:
@@ -86,7 +86,7 @@ class PredictTempMin:
             monthMaxTemp = self.avg_max_temp.loc[2023, int(i)]
             monthmin.append(monthMaxTemp)
             #average_max_temp_2023 = self.avg_max_temp.loc[2023]
-            print("Average Min Temperature for ",str(i),": ",monthMaxTemp)
+
         return monthmin
 
 class PredictRainfall:
@@ -112,12 +112,12 @@ class PredictRainfall:
             print("Average rainfall for ",str(i),": ",monthMaxTemp)
 
 class UI:
-    def __init__(self):
-        self.N=int(input("Enter the Nitrogen: "))
-        self.P=int(input("Enter the Phosphorous: "))
-        self.K=int(input("Enter the Potassium: "))
-        self.startMonth=int(input("Enter the start month index(1-9): "))
-        self.endMonth=int(input("Enter the end month index(1-9): "))
+    def __init__(self,N,P,K,startMonth,endMonth):
+        self.N=int(N)
+        self.P=int(P)
+        self.K=int(K)
+        self.startMonth=int(startMonth)
+        self.endMonth=int(endMonth)
     
     def giveNPK(self):
         self.listSoil=[self.N,self.P,self.K]
@@ -126,7 +126,7 @@ class UI:
     def giveAvgTemps(self):
         listIndex=[]
         for i in range(self.startMonth,self.endMonth+1):
-            listIndex.append[i]
+            listIndex.append(i)
         obj=PredictTempMax()
         listMax=obj.fetchMonthMax(listIndex)
         obj=PredictTempMin()
@@ -138,8 +138,12 @@ class UI:
         
         
 
+def suggest_crop_input(N,P,K,startMonth,endMonth):
+    obj=UI(N,P,K,startMonth,endMonth)
+    list1=obj.giveNPK()
+    return list1
 
-if __name__=="__main__":
-    obj=PredictTempMin()
-    obj.fetchMonthMin([1,2,3])
-    
+def giveavg(N,P,K,startMonth,endMonth):
+    obj = UI(N,P,K,startMonth,endMonth)
+    l=obj.giveAvgTemps()
+    return l
