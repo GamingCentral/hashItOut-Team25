@@ -80,6 +80,8 @@ class Login(tk.Tk):
             label_values="Suitable Crops are: "
             for i in suitcrops:
                 label_values=label_values+i+", "
+            if label_values == "Suitable Crops are: ":
+                label_values = "No suitable crops found"
             self.open_next_window(label_values)
 
     def update_error_label(self, message):
