@@ -33,13 +33,13 @@ class Login(tk.Tk):
         self.password_entry.grid(row=3, column=1, pady=5)
 
         # Row 2: Start Text Input
-        self.start_text_label = tk.Label(self, text="Start Text Input", font=("bookman old style", 15), fg="gray", bg="#141414")
+        self.start_text_label = tk.Label(self, text="Start Month Index", font=("bookman old style", 15), fg="gray", bg="#141414")
         self.start_text_label.grid(row=4, column=0, padx=20)
         self.start_text_entry = tk.Entry(self, width=50, font=("Helvetica", 11), bg="white", fg="#141414")
         self.start_text_entry.grid(row=4, column=1, pady=5)
 
         # Row 3: End Text Input
-        self.end_text_label = tk.Label(self, text="End Text Input", font=("bookman old style", 15), fg="gray", bg="#141414")
+        self.end_text_label = tk.Label(self, text="End Month Index", font=("bookman old style", 15), fg="gray", bg="#141414")
         self.end_text_label.grid(row=5, column=0, padx=20)
         self.end_text_entry = tk.Entry(self, width=50, font=("Helvetica", 11), bg="white", fg="#141414")
         self.end_text_entry.grid(row=5, column=1, pady=5)
